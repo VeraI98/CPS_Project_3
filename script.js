@@ -16,3 +16,14 @@ toggle.addEventListener('click', () => {
     arrow.style.transform = 'rotate(180deg)';
   }
 });
+
+if (window.innerWidth <= 480) {
+  new Swiper(".mySwiper", {
+    slidesPerView: 1.3,
+    spaceBetween: 16,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}
