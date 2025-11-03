@@ -38,7 +38,7 @@ body {
   height: 72px;
   display: flex;
   justify-content: space-between;
-  align-items:flex-start
+  align-items:flex-start;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -137,17 +137,19 @@ body {
 
 
 
-@media (max-width: 480px) {
-
+@media (min-width: 320px) and (max-width: 767px) {
 
   .brands-row,
-  .services__toggle {
-    display: none;
+  .services__toggle,
+  .services__extra {
+
+  display: none !important; 
   }
 
-  .mySwiper {
-    width: 100%;
-    padding: 10px 0 20px;
+  .swiper-mySwiper { 
+  display: block;
+  width: 100%; 
+  padding: 10px 0 20px;
   }
 
   .swiper-slide {
@@ -162,5 +164,10 @@ body {
 
   .swiper-pagination {
     margin-top: 10px;
+  }
+
+  .swiper-pagination {
+    bottom: 0px;
+    margin-top: 0; 
   }
 }

@@ -17,13 +17,32 @@ toggle.addEventListener('click', () => {
   }
 });
 
-if (window.innerWidth <= 480) {
-  new Swiper(".mySwiper", {
-    slidesPerView: 1.3,
-    spaceBetween: 16,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+
+
+let swiperInstance = null;
+
+function initSwiper() {
+  const width = window.innerWidth;
+
+  if (width >= 320 && width <= 767) {
+    if (!swiperInstance) {
+      swiperInstance = new Swiper(".swiper-mySwiper", {
+        slidesPerView: 1.3,
+        spaceBetween: 8, // расстояние между кнопками
+        centeredSlides: true, // центрирование слайдов
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  } else {
+    if (swiperInstance) {
+      swiperInstance.destroy(true, true);
+      swiperInstance = null;
+    }
+  }
 }
+
+initSwiper();
+window.addEventListener("resize", initSwiper);
