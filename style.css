@@ -113,7 +113,7 @@ body {
 
 
 /* Планшетная версия, последние 2 кнопки исчезают и меняют размер */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px)  {
 
   .brands-row {
     display: flex;
